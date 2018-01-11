@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+    <!-- Post Content Column -->
+    <div class="col-lg-12">
+      <!-- Title -->
+      <h1 class="mt-4" align= "middle"><%= @post.title%></h1>
+      <!-- Author -->
+      <p class="lead">
+        by
+        <%= link_to @post.nickname, edit_user_registration_path(@post.user)%>
+      </p>
+      <hr>
+
+      <!-- Date/Time -->
+      <p>Posted on January 10, 2018 at 12:00 PM</p>
+      <p><%= @post.body.split(" ").length%> words (2 minutes)</p>
+
+      <hr>
+
+      <!-- Preview Image -->
+      <%= image_tag @post.main_photo.url, height: "50%", width: "50%" %>
+      <hr>
+
+      <!-- Post Content -->
+      <div class="container container-body-text">
+        <p class="text-left"><%= raw @post.body %></p>
+      </div>
+
+
+      <hr>
+
+      <!-- Comments Form -->
+      <div class="card my-4">
+        <h5 class="card-header">Leave a Comment:</h5>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Single Comment -->
+      <div class="media mb-4">
+        <%= image_tag "profile-image.png", class: "card-img-top", height: 50, width: 50 %>
+        <div class="media-body">
+          <h5 class="mt-0">Commenter Name</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+
+
+
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
